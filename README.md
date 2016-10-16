@@ -145,4 +145,4 @@ Theta S Wifi Streaming Demo with Unity
 - のしぷさんのブログを参考にさせていただきました。 http://noshipu.hateblo.jp/entry/2016/04/21/183439 ありがとうございました！
 - This project uses LitJson to read Json format. https://lbv.github.io/litjson/ Thank you very much.
 
-![Analytics](https://ga-beacon.appspot.com/UA-73311422-5/Theta-WebGL-viewer)
+![Analytics](https://ga-beacon.appspot.com/UA-73311422-5/ThetaWiFiStreaming)
