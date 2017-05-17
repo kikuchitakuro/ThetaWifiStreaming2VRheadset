@@ -1,9 +1,50 @@
+# THETA S WiFi Live Streaming to VR Headsets
+
+This Unity project (created in the version 5.6.1) has as main goal to live stream a 360°-video acquired with the [THETA S](https://theta360.com/en/about/theta/s.html) camera to a VR headset.
+
+For the moment, only the [Oculus Rift](https://www.oculus.com/rift/) is supported; the **Oculus Development Kit 2 (DK2)** was utilized for test. Support for the [Google Cardboard](https://vr.google.com/cardboard/) will be implemented in the future.
+
+This project is based on the [ThetaWifiStreaming repository](https://github.com/makoto-unity/ThetaWifiStreaming) by [Makoto Ito](https://github.com/makoto-unity). The original `Assets`, `Scripts` and `LICENSE` files are located in [`./Assets/ThetaStreaming/`](https://github.com/rcassani/ThetaWifiStreaming2VRheadset/tree/master/Assets/ThetaStreaming)    
+
+[Live Streaming from the RICOH THETA S ](http://theta360.guide/community-document/live-streaming.html)
+can be performed through the USB or HDMI cables. While the THETA S is not meant for live-streaming over WiFi, a small [Equirectangular](http://theta360.guide/blog/video/2017/01/25/convert-dual-fisheye-to-equirectangular.html) preview (MotionJPEG 640x320 @ 10 fps) is streamed over Wifi, as guidance in the image capture (shooting still images) mode.
+
+## Requirements
+Run the [Rift's setup tool](https://www3.oculus.com/en-us/setup/) to install all the required software and configure the Oculus Rift.
+
+## Usage
+1. Turn the THETA S on in image capture (shooting still images) mode with WiFi enabled.
+  https://theta360.com/en/support/manual/s/content/shooting-photo/shooting_photo_02.html
+
+2. Establish the WiFi connection between the PC and the THETA S. The password is written on the THETA S, the 8 characters after XS (not including XS)
+
+3. Run Oculus Windows App in the background
+
+4. Open the `ThetaWifiStreamingOculus` scene of this project, and click in the Play button.
+
+5. By default, the front orientation of the Oculus Rift corresponds to the front lens (the one without shooter button) of the THETA S. To reset this orientation, press the `SPACE` bar, the current orientation of the Oculus Rift will correspond to the front lens.
+
+## Actions during execution
+During the "game" the user can change the Scene with the following keys
+
+| Key    | Action                           |
+| -------|:--------------------------------:|
+| `ESC`  | Stops the WiFi streaming,        |
+| `SPACE`| Resets Oculus orientation        |
+| `W`    | Increases the size of the Sphere |
+| `S`    | Reduces  the size of the Sphere  |
+
+With a small Sphere size, for example 20, the movement of the head (relative to the head tracking sensor) has  a zoom in (or out) effect when the Oculus Rift gets closer (or farther) to the sensor, as in the Unity scene the Oculus Camera position gets closer (or farther) to the spherical projection. With Sphere size values, for example 220, the movement of the head is negligible.
+
+The translation and original `README.md` of the repo are included below.
+___
+
 # ThetaWifiStreaming
 Theta S Wifi Streaming Demo with Unity
 
-## Things to Prepare 
+## Things to Prepare
 1. Theta S
-2. A PC or Mac that is connected to Wifi. iOS or Android will probably work as well. 
+2. A PC or Mac that is connected to Wifi. iOS or Android will probably work as well.
 
 ## Usage
 1. Turn the THETA S on with Wifi mode enabled.
@@ -11,7 +52,7 @@ Theta S Wifi Streaming Demo with Unity
 3. When you open the project in Unity, the streaming image will appear on the material of Sphere100
 
 ## Acknowledgements
-- I referenced Noshipu's blog. Thank you.  http://noshipu.hateblo.jp/entry/2016/04/21/183439 
+- I referenced Noshipu's blog. Thank you.  http://noshipu.hateblo.jp/entry/2016/04/21/183439
 - This project uses LitJson to read Json format. https://lbv.github.io/litjson/ Thank you very much.
 
 ## Translation of Noshipu's blog

@@ -3,8 +3,8 @@ using System.Collections;
 
 public class AdjustForOculus : MonoBehaviour {
     public GameObject oculus_camera;
-    [Range(15, 1000)]
-    public int oculus_sphere_size = 1000;
+    [Range(20, 220)]
+    public int oculus_sphere_size = 220;
 
 	// Use this for initialization
 	void Start ()
@@ -21,6 +21,18 @@ public class AdjustForOculus : MonoBehaviour {
         {
             ResetOrientation();
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            oculus_sphere_size = oculus_sphere_size + 50;
+            ResizeSphere();
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            oculus_sphere_size = oculus_sphere_size - 50;
+            ResizeSphere();
+        }
+
+
     }
 
     void ResetOrientation()
@@ -35,14 +47,11 @@ public class AdjustForOculus : MonoBehaviour {
 
     void ResizeSphere()
     {
+        oculus_sphere_size = Mathf.Clamp(oculus_sphere_size, 20, 220);
         Vector3 sphere_scale = new Vector3(-1, 1, 1);
         transform.localScale = oculus_sphere_size * sphere_scale;
-    }
-
-    void OnValidate()
-    {
-        ResizeSphere();
         Debug.Log("Sphere size set to:" + oculus_sphere_size.ToString());
     }
+
 
 }
